@@ -7,7 +7,7 @@ const {
   getVideogameByName,
 } = require("../controllers/videogamesController");
 
-// Controlador para obtener videojuegos.
+// MANEJADOR PARA OBTENER VIDEOJUEGOS
 const getVideogamesHandler = async (req, res) => {
   const { name } = req.query;
 
@@ -26,7 +26,7 @@ const getVideogamesHandler = async (req, res) => {
   }
 };
 
-// Controlador para obtener un videojuego por su ID.
+// MANEJADOR PARA OBTENER VIDEOJUEGOS POR ID
 const getVideogameHandler = async (req, res) => {
   const { id } = req.params;
 
@@ -45,7 +45,7 @@ const getVideogameHandler = async (req, res) => {
   }
 };
 
-// Controlador para crear un nuevo videojuego.
+// MANEJADOR PARA CREAR UN VIDEOJUEGO
 const createVideogameHandler = async (req, res) => {
   try {
     // Obtener los datos del nuevo videojuego desde la solicitud.

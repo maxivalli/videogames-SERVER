@@ -4,7 +4,7 @@ const {
   createGenres,
 } = require("../controllers/genresController.js");
 
-// Controlador para obtener los géneros.
+// MANEJADOR PARA OBTENER LOS GENEROS
 const getGenres = async (req, res) => {
   try {
     // Obtener los géneros de la base de datos utilizando el controlador.

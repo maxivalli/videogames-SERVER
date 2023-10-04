@@ -5,10 +5,10 @@ const URL = "https://api.rawg.io/api/genres";
 const { API_KEY } = process.env;
 const { Genre } = require("../db.js");
 
-// Función para obtener géneros desde la base de datos local.
+// CONTROLADOR PARA OBTENER LOS GENEROS DE LA BASE DE DATOS
 const getDBGenres = async () => await Genre.findAll();
 
-// Función para crear géneros en la base de datos local desde una fuente externa (API).
+// FUNCION PARA CREAR LOS GENEROS EN LA BASE DE DATOS LOCAL
 const createGenres = async () => {
   // Realizar una solicitud a la API externa para obtener datos de géneros.
   const response = await axios.get(`${URL}?key=${API_KEY}`);
