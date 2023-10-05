@@ -5,7 +5,7 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY } = process.env;
+const { DB_DEPLOY } = process.env;
 
 // Crear una instancia Sequelize para conectarnos a la base de datos PostgreSQL
 /* const sequelize = new Sequelize(
