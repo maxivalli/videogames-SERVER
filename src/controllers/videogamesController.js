@@ -24,6 +24,7 @@ const cleanArray = (videogames) =>
     };
   });
 
+
 // Función para obtener todos los videojuegos desde la API y la base de datos local.
 const getAllVideogames = async () => {
   const databaseVideogames = await Videogame.findAll();
@@ -42,6 +43,7 @@ const getAllVideogames = async () => {
   return [...apiVideogames, ...databaseVideogames];
 };
 
+
 // Función para obtener un videojuego por su ID desde la API o la base de datos local.
 const getVideogameById = async (id, source) => {
   let dbVideogame;
@@ -54,6 +56,7 @@ const getVideogameById = async (id, source) => {
     source === "API" ? cleanArray([videogameRaw]) : [videogameRaw];
   return [...videogame];
 };
+
 
 // Función para crear un nuevo videojuego.
 const createVideogame = async (
@@ -74,6 +77,7 @@ const createVideogame = async (
     rating,
     genres,
   });
+
 
 // Función para buscar videojuegos por nombre en la API y la base de datos local.
 const searchVideogameByName = async (name) => {
@@ -101,6 +105,7 @@ const searchVideogameByName = async (name) => {
 
   return [...dbVideogames, ...apiVideogames];
 };
+
 
 // Función para obtener un videojuego por nombre en la API y la base de datos local.
 const getVideogameByName = async (name) => {

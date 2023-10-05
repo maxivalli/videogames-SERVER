@@ -12,5 +12,4 @@ const router = Router();
 router.use("/videogames", videogamesRoutes); // Rutas relacionadas con videojuegos.
 router.use("/genres", genresRoutes); // Rutas relacionadas con géneros de videojuegos.
 
-// Exportar el router configurado para su uso en la aplicación principal.
 module.exports = router;
