@@ -1,4 +1,4 @@
-// Importar los controladores relacionados con los géneros desde genresController.js.
+
 const {
   getDBGenres,
   createGenres,
@@ -29,5 +29,5 @@ const getGenres = async (req, res) => {
   }
 };
 
-// Exportar el controlador `getGenres` para su uso en las rutas.
+
 module.exports = { getGenres };

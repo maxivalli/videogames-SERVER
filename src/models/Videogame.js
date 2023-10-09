@@ -1,47 +1,47 @@
-// Importar las clases DataTypes y BOOLEAN de Sequelize.
+
 const { DataTypes, BOOLEAN } = require("sequelize");
 
-// Exportar una función que define el modelo Videogame en la base de datos.
+
 module.exports = (sequelize) => {
   sequelize.define(
     "Videogame",
     {
       id: {
-        type: DataTypes.UUID, // El tipo de dato es un UUID.
-        primaryKey: true, // Es la clave primaria de la tabla.
-        defaultValue: DataTypes.UUIDV4, // El valor por defecto es un UUID generado automáticamente.
+        type: DataTypes.UUID, 
+        primaryKey: true, 
+        defaultValue: DataTypes.UUIDV4, 
       },
       name: {
-        type: DataTypes.STRING, // El tipo de dato es una cadena de texto.
-        allowNull: false, // No se permite un valor nulo.
-        unique: true, // Debe ser único en la tabla.
+        type: DataTypes.STRING, 
+        allowNull: false, 
+        unique: true, 
       },
       description: {
-        type: DataTypes.TEXT, // El tipo de dato es un texto largo.
+        type: DataTypes.TEXT, 
       },
       platforms: {
-        type: DataTypes.ARRAY(DataTypes.STRING), // El tipo de dato es un array de cadenas de texto.
-        allowNull: false, // No se permite un valor nulo.
+        type: DataTypes.ARRAY(DataTypes.STRING), 
+        allowNull: false, 
       },
       image: {
-        type: DataTypes.STRING, // El tipo de dato es una cadena de texto.
+        type: DataTypes.STRING, 
       },
       released: {
-        type: DataTypes.DATEONLY, // El tipo de dato es una fecha sin hora.
+        type: DataTypes.DATEONLY, 
       },
       rating: {
-        type: DataTypes.FLOAT, // El tipo de dato es un número decimal.
+        type: DataTypes.FLOAT, 
       },
       genres: {
-        type: DataTypes.ARRAY(DataTypes.STRING), // El tipo de dato es un array de cadenas de texto.
+        type: DataTypes.ARRAY(DataTypes.STRING), 
       },
       created: {
-        type: DataTypes.BOOLEAN, // El tipo de dato es un booleano.
-        defaultValue: true, // El valor por defecto es true.
+        type: DataTypes.BOOLEAN, 
+        defaultValue: true, 
       },
     },
     {
-      timestamps: false, // No se incluirán las columnas de timestamps (createdAt y updatedAt).
+      timestamps: false, 
     }
   );
 };

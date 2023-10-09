@@ -1,19 +1,19 @@
-// Importar las dependencias necesarias.
+
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 
-// Importar las rutas de la aplicación.
+
 const routes = require("./routes/index.js");
 
-// Importar y configurar la conexión a la base de datos PostgreSQL.
+
 require("./db.js");
 
-// Crear una instancia de Express.
+
 const server = express();
 
-// Asignar un nombre a la aplicación.
+
 server.name = "API";
 
 // Configurar middleware para el manejo de datos en el cuerpo de las solicitudes.
@@ -38,7 +38,7 @@ server.use((req, res, next) => {
   next();
 });
 
-// Configurar las rutas de la aplicación.
+
 server.use("/", routes);
 
 // Middleware para capturar errores.
@@ -53,5 +53,4 @@ server.use((err, req, res, next) => {
   res.status(status).send(message);
 });
 
-// Exportar la instancia de Express como el servidor de la aplicación.
 module.exports = server;

@@ -1,4 +1,4 @@
-// Importar las dependencias necesarias.
+
 require("dotenv").config();
 const URL = "https://api.rawg.io/api/games";
 const { API_KEY } = process.env;
@@ -6,7 +6,7 @@ const axios = require("axios");
 const { Op } = require("sequelize");
 const { Videogame } = require("../db.js");
 
-// Función para limpiar los datos de videojuegos obtenidos de la API.
+// Controlador para limpiar los datos de videojuegos obtenidos de la API.
 const cleanArray = (videogames) =>
   videogames.map((videogame) => {
     return {
@@ -25,7 +25,7 @@ const cleanArray = (videogames) =>
   });
 
 
-// Función para obtener todos los videojuegos desde la API y la base de datos local.
+// Controlador para obtener todos los videojuegos desde la API y la base de datos local.
 const getAllVideogames = async () => {
   const databaseVideogames = await Videogame.findAll();
 
@@ -44,7 +44,7 @@ const getAllVideogames = async () => {
 };
 
 
-// Función para obtener un videojuego por su ID desde la API o la base de datos local.
+// Controlador para obtener un videojuego por su ID desde la API o la base de datos local.
 const getVideogameById = async (id, source) => {
   let dbVideogame;
   if (source === "DB") dbVideogame = await Videogame.findByPk(id);
@@ -58,7 +58,7 @@ const getVideogameById = async (id, source) => {
 };
 
 
-// Función para crear un nuevo videojuego.
+// Controlador para crear un nuevo videojuego.
 const createVideogame = async (
   name,
   image,
@@ -79,7 +79,7 @@ const createVideogame = async (
   });
 
 
-// Función para buscar videojuegos por nombre en la API y la base de datos local.
+// Controlador para buscar videojuegos por nombre en la API y la base de datos local.
 const searchVideogameByName = async (name) => {
   if (!name) {
     return [];
@@ -107,7 +107,7 @@ const searchVideogameByName = async (name) => {
 };
 
 
-// Función para obtener un videojuego por nombre en la API y la base de datos local.
+// Controlador para obtener un videojuego por nombre en la API y la base de datos local.
 const getVideogameByName = async (name) => {
   const allVideogames = await getAllVideogames();
 
@@ -118,7 +118,7 @@ const getVideogameByName = async (name) => {
   return filteredVideogames.length > 0 ? filteredVideogames : null;
 };
 
-// Exportar las funciones para su uso en el handler.
+
 module.exports = {
   createVideogame,
   getVideogameById,

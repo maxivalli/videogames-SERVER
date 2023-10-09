@@ -77,7 +77,7 @@ const createVideogameHandler = async (req, res) => {
   }
 };
 
-// Exportar los controladores para su uso en las rutas.
+
 module.exports = {
   getVideogamesHandler,
   getVideogameHandler,

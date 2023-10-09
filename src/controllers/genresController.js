@@ -22,5 +22,5 @@ const createGenres = async () => {
   }
 };
 
-// Exportar las funciones `getDBGenres` y `createGenres` para su uso en el handler.
+
 module.exports = { getDBGenres, createGenres };
